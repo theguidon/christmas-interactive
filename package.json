@@ -1,0 +1,24 @@
+{
+  "name": "christmas-interactive",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "node-sass --watch resources/stylesheets/scss/main.scss public/main.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theguidon/christmas-interactive.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theguidon/christmas-interactive/issues"
+  },
+  "homepage": "https://github.com/theguidon/christmas-interactive#readme",
+  "devDependencies": {
+    "node-sass": "^4.13.0",
+    "nodemon": "^2.0.2"
+  }
+}
