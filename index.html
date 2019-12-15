@@ -5,11 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/resources/stylesheets/minireset.css">
+    <link rel="stylesheet" href="/resources/stylesheets/animate.css">
+    <link rel="stylesheet" href="/resources/stylesheets/main.css">
     <title>Christmas Interacitve</title>
 </head>
 
-<body>
+<body id="home">
+
+    <div id="overlay">
+        <div class="container d-flex align-items-center flex-column justify-content-between" id="home0">
+            <img src="/resources/images/logo.png" alt="logo">
+            <div class="text-center">
+                <h1>Ang Pasko Namin Ngayong Taon</h1>
+                <h2>By Tria Gonzales</h2>
+            </div>
+            <div>
+                <h6 id="cursor">
+                    Scroll Down
+                </h6>
+                <div class="d-flex justify-content-center" onclick="scrollDown()">
+                    <svg width="33" height="17" viewBox="0 0 33 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M33 2.88851L29.6254 0L16.5 11.2254L3.37458 0L0 2.88608L16.5 17L33 2.88851Z"
+                            fill="white" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script src="/resources/scripts/scripts.js"></script>
 </body>
 
