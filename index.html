@@ -12,10 +12,12 @@
     <title>Christmas Interacitve</title>
 </head>
 
-<body id="home">
+<body>
 
+    <div id="home0"></div>
+    <div id="home1"></div>
     <div id="overlay">
-        <div class="container d-flex align-items-center flex-column justify-content-between" id="home0">
+        <div class="home-container d-flex align-items-center flex-column justify-content-between">
             <img src="/resources/images/logo.png" alt="logo">
             <div class="text-center">
                 <h1>Ang Pasko Namin Ngayong Taon</h1>
@@ -25,7 +27,7 @@
                 <h6 id="cursor">
                     Scroll Down
                 </h6>
-                <div class="d-flex justify-content-center" onclick="scrollDown()">
+                <div class="d-flex justify-content-center">
                     <svg width="33" height="17" viewBox="0 0 33 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M33 2.88851L29.6254 0L16.5 11.2254L3.37458 0L0 2.88608L16.5 17L33 2.88851Z"
                             fill="white" />
@@ -36,7 +38,11 @@
     </div>
 
 
-    <script src="/resources/scripts/scripts.js"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="/resources/scripts/index.js"></script>
 </body>
 
 </html>

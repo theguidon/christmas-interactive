@@ -1,99 +1,109 @@
 * {
-    font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 h1 {
-    font-style: normal;
-    font-weight: 900;
-    font-size: 48px;
-    color: #ffffff;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  color: #ffffff;
 }
 
 h2 {
-    font-style: normal;
-    font-weight: 300;
-    font-size: 24px;
-    line-height: 37px;
-    color: #ffffff;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 37px;
+  color: #ffffff;
 }
 
-body {
-    background-image: url('/resources/images/wallpaper0.svg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
+body,
+#home1,
+#home0 {
+  position: relative;
+  height: 100vh;
+  background-image: url('/resources/images/wallpaper2.svg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 #overlay {
-    position: fixed;
-    /* Sit on top of the page content */
-    display: block;
-    width: 100%;
-    /* Full width (cover the whole page) */
-    height: 100%;
-    /* Full height (cover the whole page) */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.54);
-    /* Black background with opacity */
-    z-index: 999999;
-    /* Specify a stack order in case you're using a different order for other elements */
+  position: fixed;
+  /* Sit on top of the page content */
+  display: block;
+  width: 100%;
+  /* Full width (cover the whole page) */
+  height: 100%;
+  /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.54);
+  /* Black background with opacity */
+  z-index: 999999;
+  /* Specify a stack order in case you're using a different order for other elements */
 }
 
-.container {
-    padding: 60px;
+.home-container {
+  padding: 60px;
+  height: 100vh;
+}
+
+#home1 {
+  background-image: url('/resources/images/wallpaper1.svg');
 }
 
 #home0 {
-    height: 100vh;
+  background-image: url('/resources/images/wallpaper0.svg');
+  z-index: 9999
 }
 
+
 #cursor {
-    color: white;
-    margin-bottom: 8px;
-    font-size: 16px;
-    line-height: 23px;
-    text-transform: uppercase;
+  color: white;
+  margin-bottom: 8px;
+  font-size: 16px;
+  line-height: 23px;
+  text-transform: uppercase;
 }
 
 .d-flex {
-    display: flex;
+  display: flex;
 }
 
 .text-center {
-    text-align: center;
+  text-align: center;
 }
 
 .flex-column {
-    flex-direction: column;
+  flex-direction: column;
 }
 
 .align-items-center {
-    align-items: center;
+  align-items: center;
 }
 
 .justify-content-center {
-    justify-content: center;
+  justify-content: center;
 }
 
 .justify-content-between {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
-
 @media screen and (max-width: 720px) {
-    h1 {
-        font-size: 24px;
-    }
+  h1 {
+    font-size: 24px;
+  }
 
-    h2 {
-        font-size: 16px;
-    }
+  h2 {
+    font-size: 16px;
+  }
 
-    .cursor {
-        font-size: 12px;
-    }
+  .cursor {
+    font-size: 12px;
+  }
 }
