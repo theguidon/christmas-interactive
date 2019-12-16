@@ -1,20 +1,15 @@
 const overlay = document.getElementById("overlay");
 const home0 = document.getElementById("home0");
 const home1 = document.getElementById("home1");
-/* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
-// let prevScrollpos = window.pageYOffset;
-// window.onwheel = () => {
-//     let currentScrollPos = window.pageYOffset;
-//     if (prevScrollpos > currentScrollPos) {
-//         overlay.className = "animated fadeInDown";
-//     } else {
-//         overlay.className = "animated fadeOut";
-//     }
-//     prevScrollpos = currentScrollPos;
-// };
-
 
 let count = 0;
+let overlayStatus = true;
+
+const onScrollDown = () => {
+    overlay.className = "animated fadeOut";
+    count = 5;
+    overlayStatus = false;
+};
 
 window.addEventListener('wheel', e => {
     let delta = e.deltaY; // just to know if it is scroll wheel up or down
@@ -26,11 +21,12 @@ window.addEventListener('wheel', e => {
         // scroll down
         count += 1;
         overlay.className = "animated fadeOut";
+        overlayStatus = false;
     }
 
-    if (count <= 0) {
+    if (count <= 0 && overlayStatus === false) {
         overlay.className = "animated fadeInDown";
-
+        overlayStatus = true;
     } else if (count >= 75) {
         home1.style.display = "none";
     } else if (count <= 25) {
@@ -40,3 +36,33 @@ window.addEventListener('wheel', e => {
         home1.style.display = "block";
     }
 });
+
+
+(function () {
+    document.onmousemove = handleMouseMove;
+    function handleMouseMove(event) {
+        var eventDoc, doc, body;
+
+        event = event || window.event; // IE-ism
+        const x = event.pageX;
+        const y = event.pageY;
+        // If pageX/Y aren't available and clientX/Y are,
+        // calculate pageX/Y - logic taken from jQuery.
+        // (This is to support old IE)
+        if (x == null && event.clientX != null) {
+            eventDoc = (event.target && event.target.ownerDocument) || document;
+            doc = eventDoc.documentElement;
+            body = eventDoc.body;
+
+            x = event.clientX +
+                (doc && doc.scrollLeft || body && body.scrollLeft || 0) -
+                (doc && doc.clientLeft || body && body.clientLeft || 0);
+            y = event.clientY +
+                (doc && doc.scrollTop || body && body.scrollTop || 0) -
+                (doc && doc.clientTop || body && body.clientTop || 0);
+        }
+        // Use event.pageX / event.pageY here
+        console.log(x, y);
+
+    }
+})();
