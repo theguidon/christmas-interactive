@@ -2,6 +2,8 @@ const overlay = document.getElementById("overlay");
 const home0 = document.getElementById("home0");
 const home1 = document.getElementById("home1");
 
+const article = document.getElementById("article")
+
 let count = 0;
 let overlayStatus = true;
 
@@ -66,3 +68,13 @@ window.addEventListener('wheel', e => {
 
     }
 })();
+
+const showArticle = (articleNum) => {
+    const article = document.getElementById(`article-${articleNum}`);
+    article.style.display = "block";
+    console.log(article.style.display)
+    article.className += article.classList.includes('animated') && article.classList.includes('fadeDown') ? "" : " animated fadeDown";
+
+    console.log(document.getElementById('article-1').style.display)
+
+}

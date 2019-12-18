@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
 * {
   font-family: 'Roboto', sans-serif;
 }
@@ -22,7 +24,7 @@ body,
 #home0 {
   position: relative;
   height: 100vh;
-  background-image: url('/resources/images/wallpaper2.svg');
+  background-image: url('../images/wallpaper2.svg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -53,11 +55,11 @@ body,
 }
 
 #home1 {
-  background-image: url('/resources/images/wallpaper1.svg');
+  background-image: url('../images/wallpaper1.svg');
 }
 
 #home0 {
-  background-image: url('/resources/images/wallpaper0.svg');
+  background-image: url('../images/wallpaper0.svg');
   z-index: 9999
 }
 
@@ -120,4 +122,50 @@ body,
   #cursor>h6 {
     font-size: 12px;
   }
+}
+
+
+.article{
+  background: rgba(0, 0, 0, 0.7);
+  font-family: 'Raleway', sans-serif;
+}
+
+.article p{
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 23px;
+
+}
+
+.article h1{
+  font-size: 28px;
+  line-height: 33px;
+  font-weight: bold;
+  text-align: center;
+  padding-left: 62px;
+}
+
+#article-1,
+#article-2,
+#article-3{
+  display: none;
+}
+
+#article-1 h1,
+#article-2 h1,
+#article-3 h1{
+  
+}
+
+#article-1 h1{
+  color: #CE5641
+
+}
+
+#article-2 h1{
+  color: #CE9A2B
+}
+
+#article-3 h1{
+  color: #8C8C8B
 }
