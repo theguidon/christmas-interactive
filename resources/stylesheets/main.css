@@ -3,9 +3,11 @@
 }
 
 h1 {
+  font-family: 'Rochester',
+    cursive;
   font-style: normal;
   font-weight: 900;
-  font-size: 48px;
+  font-size: 120px;
   color: #ffffff;
 }
 
@@ -19,7 +21,11 @@ h2 {
 
 body,
 #home1,
-#home0 {
+#home0,
+#home2,
+#home3,
+#home4,
+#home5 {
   position: relative;
   height: 100vh;
   background-image: url('/resources/images/wallpaper2.svg');
@@ -52,20 +58,47 @@ body,
   height: 100vh;
 }
 
-#home1 {
-  background-image: url('/resources/images/wallpaper1.svg');
-}
-
 #home0 {
   background-image: url('/resources/images/wallpaper0.svg');
   z-index: 9999
 }
 
-#cursor {
+#home1 {
+  background-image: url('/resources/images/wallpaper1.svg');
+  z-index: 9999
+}
+
+#home2 {
+  background-image: url('/resources/images/wallpaper2.svg');
+  z-index: 9999
+}
+
+#home3 {
+  background-image: url('/resources/images/wallpaper3.svg');
+  z-index: 9999;
+  display: none;
   cursor: pointer;
 }
 
-#cursor>h6 {
+#home4 {
+  background-image: url('/resources/images/wallpaper4.svg');
+  z-index: 99999;
+  display: none;
+  cursor: pointer;
+}
+
+#home5 {
+  background-image: url('/resources/images/wallpaper5.svg');
+  z-index: 99999;
+  cursor: pointer;
+  display: none;
+}
+
+#scroll {
+  cursor: pointer;
+}
+
+#scroll>h6 {
   color: white;
   margin-bottom: 8px;
   font-size: 16px;
@@ -110,14 +143,15 @@ body,
 
 @media screen and (max-width: 720px) {
   h1 {
-    font-size: 24px;
+    font-size: 36px;
   }
 
   h2 {
     font-size: 16px;
+    line-height: 22px;
   }
 
-  #cursor>h6 {
+  #scroll>h6 {
     font-size: 12px;
   }
 }
