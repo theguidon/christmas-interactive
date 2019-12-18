@@ -83,4 +83,4 @@ const showArticle = articleNum => {
 
 // for dev purposes
 document.onload = onScrollDown();
-document.onload = showArticle("1");
+document.onload = showArticle("2");
