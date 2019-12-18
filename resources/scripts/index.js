@@ -68,19 +68,12 @@ window.addEventListener("wheel", e => {
   }
 })();
 
+// function for showing article
 const showArticle = articleNum => {
   const article = document.getElementById(`article-${articleNum}`);
   article.style.display = "block";
-  console.log(article.style.display);
-  article.className +=
-    article.classList.includes("animated") &&
-    article.classList.includes("fadeDown")
-      ? ""
-      : " animated fadeDown";
-
-  console.log(document.getElementById("article-1").style.display);
 };
 
-// for dev purposes
+// show article on load for dev purposes
 document.onload = onScrollDown();
 document.onload = showArticle("2");
