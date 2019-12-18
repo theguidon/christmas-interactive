@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
-
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 h1 {
@@ -24,7 +23,7 @@ body,
 #home0 {
   position: relative;
   height: 100vh;
-  background-image: url('../images/wallpaper2.svg');
+  background-image: url("../images/wallpaper2.svg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -55,19 +54,19 @@ body,
 }
 
 #home1 {
-  background-image: url('../images/wallpaper1.svg');
+  background-image: url("../images/wallpaper1.svg");
 }
 
 #home0 {
-  background-image: url('../images/wallpaper0.svg');
-  z-index: 9999
+  background-image: url("../images/wallpaper0.svg");
+  z-index: 9999;
 }
 
 #cursor {
   cursor: pointer;
 }
 
-#cursor>h6 {
+#cursor > h6 {
   color: white;
   margin-bottom: 8px;
   font-size: 16px;
@@ -119,53 +118,68 @@ body,
     font-size: 16px;
   }
 
-  #cursor>h6 {
+  #cursor > h6 {
     font-size: 12px;
   }
 }
 
-
-.article{
+.article {
   background: rgba(0, 0, 0, 0.7);
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
+  height: 100%;
+  width: 100%;
 }
 
-.article p{
+.article p {
   color: #ffffff;
-  font-size: 20px;
+  font-size: 14px;
   line-height: 23px;
-
+  text-align: justify;
 }
 
-.article h1{
-  font-size: 28px;
+.article h1 {
+  font-size: 20px;
   line-height: 33px;
   font-weight: bold;
-  text-align: center;
-  padding-left: 62px;
 }
 
 #article-1,
 #article-2,
-#article-3{
+#article-3 {
   display: none;
 }
 
-#article-1 h1,
-#article-2 h1,
-#article-3 h1{
-  
+#article-1 h1 {
+  color: #ce5641;
 }
 
-#article-1 h1{
-  color: #CE5641
-
+#article-2 h1 {
+  color: #ce9a2b;
 }
 
-#article-2 h1{
-  color: #CE9A2B
+#article-3 h1 {
+  color: #8c8c8b;
 }
 
-#article-3 h1{
-  color: #8C8C8B
+.article-header {
+  font-family: "Raleway", sans-serif;
+  padding-top: 87px;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.content-container {
+  margin: 0 auto;
+  margin-top: 41px;
+  width: 80%;
+  overflow: auto;
+}
+
+.content-container p {
+  margin-top: 20px;
+}
+/* for dev purposes */
+#home0,
+#home1 {
+  display: none;
 }
