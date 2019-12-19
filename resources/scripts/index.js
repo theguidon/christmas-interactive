@@ -15,11 +15,18 @@ const onScrollDown = () => {
     overlayStatus = false;
 };
 
+// Web Javascript
+
 window.addEventListener('wheel', e => {
+    // $(document).bind('mousewheel touchmove', e => {
     let delta = e.deltaY; // just to know if it is scroll wheel up or down
 
+    console.log('scrolling web', count)
     if (delta < 0) {
         count -= 1;
+        if (count <= 0) {
+            count = 0;
+        }
 
     } else if (delta > 0) {
         // scroll down
@@ -34,6 +41,7 @@ window.addEventListener('wheel', e => {
         overlayStatus = true;
     } else if (count >= 75) {
         home1.style.display = "none";
+        count = 75;
     } else if (count <= 25) {
         home0.style.display = "block";
     } else if (count >= 25) {
@@ -41,7 +49,6 @@ window.addEventListener('wheel', e => {
         home1.style.display = "block";
     }
 });
-
 
 $(document).bind('touchmove mousemove', e => {
     var eventDoc, doc, body;
@@ -62,7 +69,7 @@ $(document).bind('touchmove mousemove', e => {
             (doc && doc.clientTop || body && body.clientTop || 0);
     }
 
-    console.log("x:", x, "y:", y);
+    // console.log("x:", x, "y:", y);
     if ((360 >= x && x >= 280) && (740 >= y && y >= 660) && !overlayStatus && count >= 75) {
         home3.style.display = "block";
         home2.style.cursor = "pointer";
@@ -103,3 +110,50 @@ $(document).bind('touchmove mousemove', e => {
         home2.style.cursor = 'auto';
     }
 });
+
+
+// Mobile Javascript
+var ts;
+$(document).bind('touchstart', function (e) {
+    ts = e.originalEvent.touches[0].clientY;
+});
+
+$(document).bind('touchend', function (e) {
+    var te = e.originalEvent.changedTouches[0].clientY;
+    if (ts > te + 5) {
+        if (count >= 3) {
+            count = 3;
+        } else {
+            count += 1;
+        }
+        overlay.className = "animated fadeOut";
+        overlayStatus = false;
+
+    } else if (ts < te - 5) {
+        if (count <= 0) {
+            count = 0;
+        } else {
+            count -= 1;
+        }
+    }
+
+    if (count === 0 && overlayStatus === false) {
+        overlay.style.display = "block";
+        overlay.className = "animated fadeInDown";
+        overlayStatus = true;
+    } else if (count <= 1) {
+        home0.style.display = "block";
+        home1.style.display = "none";
+        home2.style.display = "none";
+    } else if (count === 2) {
+        home0.style.display = "none";
+        home1.style.display = "block";
+        home2.style.display = "none";
+    } else if (count === 3) {
+        home0.style.display = "none";
+        home1.style.display = "none";
+        home2.style.display = "block";
+    }
+});
+
+
