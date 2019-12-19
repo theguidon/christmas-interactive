@@ -43,25 +43,24 @@ window.addEventListener('wheel', e => {
 });
 
 
-$(document).bind('touchmove mousemove', function (e) {
-    // var eventDoc, doc, body;
-
+$(document).bind('touchmove mousemove', e => {
+    var eventDoc, doc, body;
     e = e || window.e;
     var x = e.originalEvent.touches ? e.originalEvent.touches[0].pageY : e.pageY;
     var y = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX;
 
-    // if (x == null && event.clientX != null) {
-    //     eventDoc = (event.target && event.target.ownerDocument) || document;
-    //     doc = eventDoc.documentElement;
-    //     body = eventDoc.body;
+    if (x == null && event.clientX != null) {
+        eventDoc = (event.target && event.target.ownerDocument) || document;
+        doc = eventDoc.documentElement;
+        body = eventDoc.body;
 
-    //     x = e.clientX +
-    //         (doc && doc.scrollLeft || body && body.scrollLeft || 0) -
-    //         (doc && doc.clientLeft || body && body.clientLeft || 0);
-    //     y = e.clientY +
-    //         (doc && doc.scrollTop || body && body.scrollTop || 0) -
-    //         (doc && doc.clientTop || body && body.clientTop || 0);
-    // }
+        x = e.clientX +
+            (doc && doc.scrollLeft || body && body.scrollLeft || 0) -
+            (doc && doc.clientLeft || body && body.clientLeft || 0);
+        y = e.clientY +
+            (doc && doc.scrollTop || body && body.scrollTop || 0) -
+            (doc && doc.clientTop || body && body.clientTop || 0);
+    }
 
     console.log("x:", x, "y:", y);
     if ((360 >= x && x >= 280) && (740 >= y && y >= 660) && !overlayStatus && count >= 75) {
@@ -71,7 +70,7 @@ $(document).bind('touchmove mousemove', function (e) {
         home5.style.display = "none";
         overlay.style.display = "none";
 
-        home3.addEventListener("click", () => {
+        $(home3).bind('click touchstart', e => {
             console.log('Ornament 1 clicked');
             // enter code here
         });
@@ -82,7 +81,7 @@ $(document).bind('touchmove mousemove', function (e) {
         home5.style.display = "none";
         overlay.style.display = "none";
 
-        home4.addEventListener("click", () => {
+        $(home4).bind('click touchstart', e => {
             console.log('Ornament 2 clicked');
             // enter code here
         });
@@ -93,7 +92,7 @@ $(document).bind('touchmove mousemove', function (e) {
         home3.style.display = "none";
         overlay.style.display = "none";
 
-        home5.addEventListener("click", () => {
+        $(home5).bind('click touchstart', e => {
             console.log('Ornament 3 clicked');
             // enter code here
         });
