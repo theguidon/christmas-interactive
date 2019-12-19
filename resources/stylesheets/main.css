@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Tiempos Text&display=swap");
 * {
   font-family: "Roboto", sans-serif;
 }
@@ -124,9 +124,34 @@ body,
 }
 
 /* Article components, mobile */
+img{
+  width: 100vw;
+  /* height: 200px; */
+  background-size: cover;
+  margin-top: 20px;
+
+}
+
+.image-container {
+  position: relative;
+  /* text-align: center; */
+  color: white;
+  font-size: 12px;
+}
+
+.image-text-overlay{
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  font-size: 12px;
+}
+
+.text-overlay-color2{
+  color: rgb(236, 234, 234)
+}
 .article {
   background: rgba(0, 0, 0, 0.7);
-  font-family: "Raleway", sans-serif;
+  font-family: "Tiempos Text", sans-serif;
   height: 100%;
   width: 100%;
 }
@@ -163,7 +188,7 @@ body,
 }
 
 .article-header {
-  font-family: "Raleway", sans-serif;
+  font-family: "Tiempos Text", sans-serif;
   padding-top: 87px;
   margin: 0 auto;
   width: 80%;
