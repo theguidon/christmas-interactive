@@ -12,24 +12,40 @@
       href="http://assets.theguidon.com/fonts/tiempos-text-regular/"
       rel="stylesheet"
     />
-
-    <link rel="stylesheet" href="./resources/stylesheets/minireset.css" />
-    <link rel="stylesheet" href="./resources/stylesheets/animate.css" />
-    <link rel="stylesheet" href="./resources/stylesheets/main.css" />
+    <link rel="shortcut icon" href="resources/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css?family=Rochester&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/resources/stylesheets/minireset.css">
+    <link rel="stylesheet" href="/resources/stylesheets/animate.css">
+    <link rel="stylesheet" href="/resources/stylesheets/main.css">
     <title>Christmas Interacitve</title>
-  </head>
+</head>
 
-  <body>
+<body id="body">
+    
     <div id="home0"></div>
     <div id="home1"></div>
-    <div id="overlay" onclick="showArticle('1')">
-      <div
-        class="home-container d-flex align-items-center flex-column justify-content-between"
-      >
-        <img src="./resources/images/logo.png" alt="logo" />
-        <div class="text-center">
-          <h1>Ang Pasko Namin Ngayong Taon</h1>
-          <h2>By Tria Gonzales</h2>
+    <!-- <div id="home2"></div> -->
+    <div id="home5"></div>
+    <div id="home4"></div>
+    <div id="home3"></div>
+    <div id="overlay">
+        <div class="home-container d-flex align-items-center flex-column justify-content-between">
+            <img src="/resources/images/logo.png" alt="logo">
+            <div class="text-center">
+                <h1>Christmas Day</h1>
+                <h2>Interactive by Tria Gonzales, Mika Medina, & Harvey Sison</h2>
+            </div>
+            <div onclick="onScrollDown()" id="scroll">
+                <h6>
+                    Scroll Down
+                </h6>
+                <div class="d-flex justify-content-center">
+                    <svg width="33" height="17" viewBox="0 0 33 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M33 2.88851L29.6254 0L16.5 11.2254L3.37458 0L0 2.88608L16.5 17L33 2.88851Z"
+                            fill="white" />
+                    </svg>
+                </div>
+            </div>
         </div>
         <div onclick="onScrollDown()" id="cursor">
           <h6>
@@ -344,11 +360,9 @@
       </div>
     </div>
 
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
-    <script src="./resources/scripts/index.js"></script>
+      <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+              integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
+      <script src="/resources/scripts/jquery.min.js"></script>
+      <script src="/resources/scripts/index.js"></script>
   </body>
 </html>
