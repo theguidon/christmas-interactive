@@ -76,4 +76,4 @@ const showArticle = articleNum => {
 
 // show article on load for dev purposes
 document.onload = onScrollDown();
-document.onload = showArticle("1");
+document.onload = showArticle("2");
