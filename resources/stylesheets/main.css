@@ -137,6 +137,7 @@ img{
   height:37px;
   width: 37px;
   margin-left: 3vw;
+  cursor: pointer;
 }
 
 .image-container {
@@ -165,13 +166,13 @@ img{
 
 .article p {
   color: #ffffff;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 23px;
   text-align: justify;
 }
 
 .article h1 {
-  font-size: 20px;
+  font-size: 24px;
   line-height: 33px;
   font-weight: bold;
 }
@@ -205,11 +206,31 @@ img{
   margin: 0 auto;
   margin-top: 41px;
   width: 80%;
-  overflow: auto;
+  overflow: scroll;
+  height: 70vh;
 }
 
 .content-container p {
   margin-top: 20px;
+}
+
+@media screen 
+  and (min-width: 1200px) 
+  /* and (-webkit-min-device-pixel-ratio: 1)  */
+  { 
+
+  .article h1{
+    font-size: 40px;
+
+  }
+  .article p{
+    font-size: 18px;
+    padding-top: 12px;
+  }
+}
+
+body{
+  height: 100%
 }
 /* for dev purposes */
 #home0,
