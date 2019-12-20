@@ -42,7 +42,7 @@ const closeArticle = articleNum => {
     article.style.display = "none";
     body.style.height = "100vh";
     body.style.overflowY = "hidden";
-    body.style.backgroundImage = "url('/resources/images/wallpaper2.svg')";
+    body.style.backgroundImage = "url('./resources/images/wallpaper2.svg')";
     home0.style.display = "none";
     home1.style.display = "none";
     // home2.style.display = "none";
