@@ -1,13 +1,21 @@
-/* @import url("https://fonts.googleapis.com/css?family=Tiempos Text&display=swap"); */
-@font-face{font-family:'Tiempos Text';src:url(TiemposText-RegularItalic.eot);src:url(TiemposText-RegularItalic.woff2) format('woff2'),url(TiemposText-RegularItalic.woff) format('woff'),url(TiemposText-RegularItalic.ttf) format('truetype'),url(TiemposText-RegularItalic.svg#TiemposText-RegularItalic) format('svg'),url(TiemposText-RegularItalic.eot?#iefix) format('embedded-opentype');font-weight:400;font-style:italic}
+@font-face {
+  font-family: 'Tiempos Text';
+  src: url(TiemposText-RegularItalic.eot);
+  src: url(TiemposText-RegularItalic.woff2) format('woff2'), url(TiemposText-RegularItalic.woff) format('woff'), url(TiemposText-RegularItalic.ttf) format('truetype'), url(TiemposText-RegularItalic.svg#TiemposText-RegularItalic) format('svg'), url(TiemposText-RegularItalic.eot?#iefix) format('embedded-opentype');
+  font-weight: 400;
+  font-style: italic
+}
+
 * {
   font-family: "Roboto", sans-serif;
 }
 
 h1 {
+  font-family: 'Rochester',
+    cursive;
   font-style: normal;
   font-weight: 900;
-  font-size: 48px;
+  font-size: 120px;
   color: #ffffff;
 }
 
@@ -21,10 +29,14 @@ h2 {
 
 body,
 #home1,
-#home0 {
+#home0,
+#home2,
+#home3,
+#home4,
+#home5 {
   position: relative;
   height: 100vh;
-  background-image: url("../images/wallpaper2.svg");
+  background-image: url('../images/wallpaper2.svg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -54,20 +66,48 @@ body,
   height: 100vh;
 }
 
-#home1 {
-  background-image: url("../images/wallpaper1.svg");
-}
-
 #home0 {
-  background-image: url("../images/wallpaper0.svg");
-  z-index: 9999;
+  background-image: url('../images/wallpaper0.svg');
+  z-index: 9999
 }
 
-#cursor {
+#home1 {
+  background-image: url('../images/wallpaper1.svg');
+  z-index: 9999
+}
+
+/* #home2 {
+  background-image: url('/resources/images/wallpaper2.svg');
+  z-index: 9999
+} */
+
+#home3 {
+  background-image: url('../images/wallpaper3.svg');
+  z-index: 9999;
+  display: none;
   cursor: pointer;
 }
 
-#cursor > h6 {
+#home4 {
+  background-image: url('../images/wallpaper4.svg');
+  z-index: 99999;
+  display: none;
+  cursor: pointer;
+}
+
+#home5 {
+  background-image: url('../images/wallpaper5.svg');
+  z-index: 99999;
+  cursor: pointer;
+  display: none;
+}
+
+#scroll {
+  cursor: pointer;
+}
+
+
+#scroll>h6 {
   color: white;
   margin-bottom: 8px;
   font-size: 16px;
@@ -112,20 +152,21 @@ body,
 
 @media screen and (max-width: 720px) {
   h1 {
-    font-size: 24px;
+    font-size: 36px;
   }
 
   h2 {
     font-size: 16px;
+    line-height: 22px;
   }
 
-  #cursor > h6 {
+  #scroll>h6 {
     font-size: 12px;
   }
 }
 
 /* Article components, mobile */
-img{
+.article>img {
   width: 100vw;
   /* height: 200px; */
   background-size: cover;
@@ -133,8 +174,8 @@ img{
 
 }
 
-.x-button{
-  height:37px;
+.x-button {
+  height: 37px;
   width: 37px;
   margin-left: 3vw;
   cursor: pointer;
@@ -147,16 +188,17 @@ img{
   font-size: 12px;
 }
 
-.image-text-overlay{
+.image-text-overlay {
   position: absolute;
   bottom: 8px;
   right: 16px;
   font-size: 12px;
 }
 
-.text-overlay-color2{
+.text-overlay-color2 {
   color: rgb(236, 234, 234)
 }
+
 .article {
   background: rgba(0, 0, 0, 0.7);
   font-family: "Tiempos Text", sans-serif;
@@ -206,34 +248,24 @@ img{
   margin: 0 auto;
   margin-top: 41px;
   width: 80%;
-  overflow: scroll;
-  height: 70vh;
 }
 
 .content-container p {
   margin-top: 20px;
 }
 
-@media screen 
-  and (min-width: 1200px) 
-  /* and (-webkit-min-device-pixel-ratio: 1)  */
-  { 
+@media screen and (min-width: 1200px)
 
-  .article h1{
+/* and (-webkit-min-device-pixel-ratio: 1)  */
+  {
+
+  .article h1 {
     font-size: 40px;
 
   }
-  .article p{
+
+  .article p {
     font-size: 18px;
     padding-top: 12px;
   }
-}
-
-body{
-  height: 100%
-}
-/* for dev purposes */
-#home0,
-#home1 {
-  display: none;
 }
