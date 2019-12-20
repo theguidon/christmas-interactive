@@ -36,6 +36,22 @@ const showArticle = articleNum => {
     articleStatus = true;
 };
 
+
+const closeArticle = articleNum => {
+    const article = document.getElementById(`article-${articleNum}`);
+    article.style.display = "none";
+    body.style.height = "100vh";
+    body.style.overflowY = "hidden";
+    body.style.backgroundImage = "url('/resources/images/wallpaper2.svg')";
+    home0.style.display = "none";
+    home1.style.display = "none";
+    // home2.style.display = "none";
+    home3.style.display = "none";
+    home4.style.display = "none";
+    home5.style.display = "none";
+
+    articleStatus = false;
+};
 // Web Javascript
 window.addEventListener('wheel', e => {
     // $(document).bind('mousewheel touchmove', e => {
@@ -100,7 +116,7 @@ $(document).bind('touchmove mousemove', e => {
         $(home3).bind('click touchstart', e => {
             console.log('Ornament 1 clicked');
             // enter code here
-            showArticle("1");
+            showArticle(1);
 
         });
     } else if ((440 >= x && x >= 360) && (880 >= y && y >= 800) && !overlayStatus && count >= 75 && articleStatus === false) {
@@ -113,7 +129,7 @@ $(document).bind('touchmove mousemove', e => {
         $(home4).bind('click touchstart', e => {
             console.log('Ornament 2 clicked');
             // enter code here
-            showArticle("2");
+            showArticle(2);
         });
     } else if ((540 >= x && x >= 450) && (700 >= y && y >= 620) && !overlayStatus && count >= 75 && articleStatus === false) {
         home5.style.display = "block";
@@ -125,7 +141,7 @@ $(document).bind('touchmove mousemove', e => {
         $(home5).bind('click touchstart', e => {
             console.log('Ornament 3 clicked');
             // enter code here
-            showArticle("3");
+            showArticle(3);
         });
     } else {
         home3.style.display = "none";
