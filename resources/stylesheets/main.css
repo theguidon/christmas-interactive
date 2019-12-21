@@ -36,7 +36,7 @@ body,
 #home5 {
   position: relative;
   height: 100vh;
-  background-image: url('/resources/images/wallpaper2.svg');
+  background-image: url('../images/wallpaper2.svg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -67,12 +67,12 @@ body,
 }
 
 #home0 {
-  background-image: url('/resources/images/wallpaper0.svg');
+  background-image: url('../images/wallpaper0.svg');
   z-index: 9999
 }
 
 #home1 {
-  background-image: url('/resources/images/wallpaper1.svg');
+  background-image: url('../images/wallpaper1.svg');
   z-index: 9999
 }
 
@@ -82,21 +82,21 @@ body,
 } */
 
 #home3 {
-  background-image: url('/resources/images/wallpaper3.svg');
+  background-image: url('../images/wallpaper3.svg');
   z-index: 9999;
   display: none;
   cursor: pointer;
 }
 
 #home4 {
-  background-image: url('/resources/images/wallpaper4.svg');
+  background-image: url('../images/wallpaper4.svg');
   z-index: 99999;
   display: none;
   cursor: pointer;
 }
 
 #home5 {
-  background-image: url('/resources/images/wallpaper5.svg');
+  background-image: url('../images/wallpaper5.svg');
   z-index: 99999;
   cursor: pointer;
   display: none;
