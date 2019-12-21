@@ -25,7 +25,6 @@ const showArticle = articleNum => {
     article.style.display = "block";
     body.style.height = "100%";
     body.style.overflowY = "auto";
-    body.style.backgroundImage = "none";
     home0.style.display = "none";
     home1.style.display = "none";
     // home2.style.display = "none";

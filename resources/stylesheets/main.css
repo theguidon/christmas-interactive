@@ -167,14 +167,8 @@ body,
 
 /* Article components, mobile */
 .article>img {
-  width: 100vw;
-  /* height: 200px; */
   background-size: cover;
   margin-top: 20px;
-
-}
-
-.x-button {
   height: 37px;
   width: 37px;
   margin-left: 3vw;
