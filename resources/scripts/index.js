@@ -149,16 +149,66 @@ $(document).bind('touchmove mousemove', e => {
         y = e.clientY +
             (doc && doc.scrollTop || bodyDoc && bodyDoc.scrollTop || 0) -
             (doc && doc.clientTop || bodyDoc && bodyDoc.clientTop || 0);
+
+        // ornament1T  = window.pageYOffset || ornament1T.scrollTop,
+        // ornament1L = window.pageXOffset || ornament1L.scrollLeft;
+        // ornament1L = (window.pageXOffset || ornament1L.scrollLeft) - (ornament1L.clientLeft || 0);
+        // ornament1T = (window.pageYOffset || ornament1T.scrollTop)  - (ornament1T.clientTop || 0);
     }
 
-    // console.log(
-    //     "x:", x,
-    //      "y:", y,
-    //      "viewport w", Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
-    //      "vieport h",  Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
-    //         );
+    console.log(
+        "x:", x,
+         "y:", y,
+         "viewport w", Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
+         "vieport h",  Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+            );
     
-    if ((360 >= x && x >= 280) && (740 >= y && y >= 660) && !overlayStatus && count >= 75 && articleStatus === false) {
+    // if ((360 >= x && x >= 280) && (740 >= y && y >= 660) && !overlayStatus && count >= 75 && articleStatus === false) {
+    //     home3.style.display = "block";
+    //     body.style.cursor = "pointer";
+    //     home4.style.display = "none";
+    //     home5.style.display = "none";
+    //     overlay.style.display = "none";
+
+    //     $(home3).bind('click touchstart', e => {
+    //         console.log('Ornament 1 clicked');
+    //         // enter code here
+    //         showArticle(1);
+
+    //     });
+    // } else if ((440 >= x && x >= 360) && (880 >= y && y >= 800) && !overlayStatus && count >= 75 && articleStatus === false) {
+    //     home4.style.display = "block";
+    //     body.style.cursor = 'pointer';
+    //     home3.style.display = "none";
+    //     home5.style.display = "none";
+    //     overlay.style.display = "none";
+
+    //     $(home4).bind('click touchstart', e => {
+    //         console.log('Ornament 2 clicked');
+    //         // enter code here
+    //         showArticle(2);
+    //     });
+    // } else if ((540 >= x && x >= 450) && (700 >= y && y >= 620) && !overlayStatus && count >= 75 && articleStatus === false) {
+    //     home5.style.display = "block";
+    //     body.style.cursor = 'pointer';
+    //     home4.style.display = "none";
+    //     home3.style.display = "none";
+    //     overlay.style.display = "none";
+
+    //     $(home5).bind('click touchstart', e => {
+    //         console.log('Ornament 3 clicked');
+    //         // enter code here
+    //         showArticle(3);
+    //     });
+    // } else {
+    //     home3.style.display = "none";
+    //     home4.style.display = "none";
+    //     home5.style.display = "none";
+    //     body.style.cursor = 'auto';
+    // }
+
+    // using dynamic coordinates
+    if ((ornament1B >= x && x >= ornament1T) && (ornament1R >= y && y >= ornament1L) && !overlayStatus && count >= 75 && articleStatus === false) {
         home3.style.display = "block";
         body.style.cursor = "pointer";
         home4.style.display = "none";
@@ -204,11 +254,11 @@ $(document).bind('touchmove mousemove', e => {
 });
 
 const logCoordinates = () => {
-    console.table([
-        [ornament1L, ornament1T, ornament1R, ornament1B], 
-        [ornament2L, ornament2T, ornament2R, ornament2B], 
-        [ornament3L, ornament3T, ornament3R, ornament3B]
-    ]);
+    console.table({
+        "ornament 1": {"left": ornament1L, "top":ornament1T, "right": ornament1R, "bottom": ornament1B}, 
+        "ornament 2":{"left": ornament2L, "top":ornament2T, "right": ornament2R, "bottom": ornament2B}, 
+        "ornament 3": {"left": ornament3L, "top":ornament3T, "right": ornament3R, "bottom": ornament3B}
+    });
 }
 
 // Mobile Javascript
