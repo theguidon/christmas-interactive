@@ -38,8 +38,6 @@ const onScrollDown = () => {
     overlay.className = "animated fadeOut";
     count = 5;
     overlayStatus = false;
-    // console.log('called')
-    // document.getElementById("svgw").style.display = ""
 };
 
 // function for showing article
@@ -149,11 +147,6 @@ $(document).bind('touchmove mousemove', e => {
         y = e.clientY +
             (doc && doc.scrollTop || bodyDoc && bodyDoc.scrollTop || 0) -
             (doc && doc.clientTop || bodyDoc && bodyDoc.clientTop || 0);
-
-        // ornament1T  = window.pageYOffset || ornament1T.scrollTop,
-        // ornament1L = window.pageXOffset || ornament1L.scrollLeft;
-        // ornament1L = (window.pageXOffset || ornament1L.scrollLeft) - (ornament1L.clientLeft || 0);
-        // ornament1T = (window.pageYOffset || ornament1T.scrollTop)  - (ornament1T.clientTop || 0);
     }
 
     console.log(
@@ -208,12 +201,14 @@ $(document).bind('touchmove mousemove', e => {
     // }
 
     // using dynamic coordinates
-    if ((ornament1B >= x && x >= ornament1T) && (ornament1R >= y && y >= ornament1L) && !overlayStatus && count >= 75 && articleStatus === false) {
+    if ((ornament1B >= x && x >= ornament1T) && (ornament1R >= y && y >= ornament1L)  &&!overlayStatus && articleStatus === false) {
+        mySVG.style.display = "none";
         home3.style.display = "block";
         body.style.cursor = "pointer";
         home4.style.display = "none";
         home5.style.display = "none";
         overlay.style.display = "none";
+        alert('ORNAMENT 1 DETECTED');
 
         $(home3).bind('click touchstart', e => {
             console.log('Ornament 1 clicked');
@@ -221,24 +216,30 @@ $(document).bind('touchmove mousemove', e => {
             showArticle(1);
 
         });
-    } else if ((440 >= x && x >= 360) && (880 >= y && y >= 800) && !overlayStatus && count >= 75 && articleStatus === false) {
+    } else if ((ornament2B >= x && x >= ornament2T) && (ornament2R >= y && y >= ornament2L)  && !overlayStatus && articleStatus === false) {
+        mySVG.style.display = "none";
         home4.style.display = "block";
         body.style.cursor = 'pointer';
         home3.style.display = "none";
         home5.style.display = "none";
         overlay.style.display = "none";
+        alert('ORNAMENT 2 DETECTED');
+
 
         $(home4).bind('click touchstart', e => {
             console.log('Ornament 2 clicked');
             // enter code here
             showArticle(2);
         });
-    } else if ((540 >= x && x >= 450) && (700 >= y && y >= 620) && !overlayStatus && count >= 75 && articleStatus === false) {
+    } else if ((ornament3B >= x && x >= ornament3T) && (ornament3R >= y && y >= ornament3L)  && !overlayStatus && articleStatus === false) {
+        mySVG.style.display = "none";
         home5.style.display = "block";
         body.style.cursor = 'pointer';
         home4.style.display = "none";
         home3.style.display = "none";
         overlay.style.display = "none";
+        alert('ORNAMENT 3 DETECTED');
+
 
         $(home5).bind('click touchstart', e => {
             console.log('Ornament 3 clicked');
@@ -246,6 +247,7 @@ $(document).bind('touchmove mousemove', e => {
             showArticle(3);
         });
     } else {
+        mySVG.style.display = "block";
         home3.style.display = "none";
         home4.style.display = "none";
         home5.style.display = "none";
