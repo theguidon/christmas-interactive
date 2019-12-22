@@ -20,7 +20,20 @@ var svgDoc;
       console.log("SVG contentDocument Loaded!", svgDoc);
  }, false);
 
+var ornament1L;
+var ornament1T;
+var ornament1R;
+var ornament1B;
 
+var ornament2L;
+var ornament2T;
+var ornament2R;
+var ornament2B;
+
+var ornament3L;
+var ornament3T;
+var ornament3R;
+var ornament3B;
 const onScrollDown = () => {
     overlay.className = "animated fadeOut";
     count = 5;
@@ -104,14 +117,27 @@ $(document).bind('touchmove mousemove', e => {
     var x = e.originalEvent.touches ? e.originalEvent.touches[0].pageY : e.pageY;
     var y = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX;
 
-    var ornament1L = svgDoc.getElementById('Ornament 1').getBoundingClientRect().left;
-    var ornament1R = svgDoc.getElementById('Ornament 1').getBoundingClientRect().right;
+    var or1 = svgDoc.getElementById('Ornament 1').getBoundingClientRect();
+    var or2 = svgDoc.getElementById('Ornament 2').getBoundingClientRect();
+    var or3 = svgDoc.getElementById('Ornament 3').getBoundingClientRect();
 
-    var ornament2L = svgDoc.getElementById('Ornament 2').getBoundingClientRect().left;
-    var ornament2R = svgDoc.getElementById('Ornament 2').getBoundingClientRect().right;
+    // gets the coordinates of each ornament for any screen size
+    ornament1L = or1.left;
+    ornament1T = or1.top;
+    ornament1R = or1.right;
+    ornament1B = or1.bottom;
 
-    var ornament3L = svgDoc.getElementById('Ornament 3').getBoundingClientRect().left;
-    var ornament3R = svgDoc.getElementById('Ornament 3').getBoundingClientRect().right;
+    ornament2L = or2.left;
+    ornament2T = or2.top;
+    ornament2R = or2.right;
+    ornament2B = or2.bottom;
+
+    ornament3L = or3.left;
+    ornament3T = or3.top;
+    ornament3R = or3.right;
+    ornament3B = or3.bottom;
+
+
     if (x == null && event.clientX != null) {
         eventDoc = (event.target && event.target.ownerDocument) || document;
         doc = eventDoc.documentElement;
@@ -125,16 +151,13 @@ $(document).bind('touchmove mousemove', e => {
             (doc && doc.clientTop || bodyDoc && bodyDoc.clientTop || 0);
     }
 
-    console.log(
-        "x:", x,
-         "y:", y,
-         "viewport w", Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
-         "vieport h",  Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
-            );
-
-    console.log(
-        "Ornament 1:", [] 
-    );
+    // console.log(
+    //     "x:", x,
+    //      "y:", y,
+    //      "viewport w", Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
+    //      "vieport h",  Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+    //         );
+    
     if ((360 >= x && x >= 280) && (740 >= y && y >= 660) && !overlayStatus && count >= 75 && articleStatus === false) {
         home3.style.display = "block";
         body.style.cursor = "pointer";
@@ -180,6 +203,13 @@ $(document).bind('touchmove mousemove', e => {
     }
 });
 
+const logCoordinates = () => {
+    console.table([
+        [ornament1L, ornament1T, ornament1R, ornament1B], 
+        [ornament2L, ornament2T, ornament2R, ornament2B], 
+        [ornament3L, ornament3T, ornament3R, ornament3B]
+    ]);
+}
 
 // Mobile Javascript
 var ts;
@@ -224,16 +254,3 @@ $(document).bind('touchend', function (e) {
         // home2.style.display = "block";
     }
 });
-
-
-// window.onload = function() {
-// 	// Get the Object by ID
-// 	var a = document.getElementById("svgw");
-// 	// Get the SVG document inside the Object tag
-// 	var svgDoc = a.contentDocument;
-// 	// Get one of the SVG items by ID;
-// 	var svgItem = svgDoc.getElementById("Ornament 1");
-//     // Set the colour to something else
-//     this.console.log(svgItem)
-// }
-
