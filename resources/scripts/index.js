@@ -13,10 +13,20 @@ let count = 0;
 let overlayStatus = true;
 let articleStatus = false;
 
+var mySVG = document.getElementById("svgw");
+var svgDoc;
+ mySVG.addEventListener("load",function() {
+      svgDoc = mySVG.contentDocument;
+      console.log("SVG contentDocument Loaded!", svgDoc);
+ }, false);
+
+
 const onScrollDown = () => {
     overlay.className = "animated fadeOut";
     count = 5;
     overlayStatus = false;
+    // console.log('called')
+    // document.getElementById("svgw").style.display = ""
 };
 
 // function for showing article
@@ -28,6 +38,7 @@ const showArticle = articleNum => {
     home0.style.display = "none";
     home1.style.display = "none";
     // home2.style.display = "none";
+    document.getElementById("svgw").style.display = "none"
     home3.style.display = "none";
     home4.style.display = "none";
     home5.style.display = "none";
@@ -41,7 +52,9 @@ const closeArticle = articleNum => {
     article.style.display = "none";
     body.style.height = "100vh";
     body.style.overflowY = "hidden";
-    body.style.backgroundImage = "url('./resources/images/wallpaper2.svg')";
+    // body.style.backgroundImage = "url('./resources/images/wallpaper2TEST.svg')";
+    document.getElementById("svgw").style.display = ""
+    body.style.backgroundImage = "none";
     home0.style.display = "none";
     home1.style.display = "none";
     // home2.style.display = "none";
@@ -91,6 +104,14 @@ $(document).bind('touchmove mousemove', e => {
     var x = e.originalEvent.touches ? e.originalEvent.touches[0].pageY : e.pageY;
     var y = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX;
 
+    var ornament1L = svgDoc.getElementById('Ornament 1').getBoundingClientRect().left;
+    var ornament1R = svgDoc.getElementById('Ornament 1').getBoundingClientRect().right;
+
+    var ornament2L = svgDoc.getElementById('Ornament 2').getBoundingClientRect().left;
+    var ornament2R = svgDoc.getElementById('Ornament 2').getBoundingClientRect().right;
+
+    var ornament3L = svgDoc.getElementById('Ornament 3').getBoundingClientRect().left;
+    var ornament3R = svgDoc.getElementById('Ornament 3').getBoundingClientRect().right;
     if (x == null && event.clientX != null) {
         eventDoc = (event.target && event.target.ownerDocument) || document;
         doc = eventDoc.documentElement;
@@ -110,6 +131,10 @@ $(document).bind('touchmove mousemove', e => {
          "viewport w", Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
          "vieport h",  Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
             );
+
+    console.log(
+        "Ornament 1:", [] 
+    );
     if ((360 >= x && x >= 280) && (740 >= y && y >= 660) && !overlayStatus && count >= 75 && articleStatus === false) {
         home3.style.display = "block";
         body.style.cursor = "pointer";
@@ -200,4 +225,15 @@ $(document).bind('touchend', function (e) {
     }
 });
 
+
+// window.onload = function() {
+// 	// Get the Object by ID
+// 	var a = document.getElementById("svgw");
+// 	// Get the SVG document inside the Object tag
+// 	var svgDoc = a.contentDocument;
+// 	// Get one of the SVG items by ID;
+// 	var svgItem = svgDoc.getElementById("Ornament 1");
+//     // Set the colour to something else
+//     this.console.log(svgItem)
+// }
 
