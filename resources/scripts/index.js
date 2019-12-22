@@ -25,7 +25,6 @@ const showArticle = articleNum => {
     article.style.display = "block";
     body.style.height = "100%";
     body.style.overflowY = "auto";
-    body.style.backgroundImage = "none";
     home0.style.display = "none";
     home1.style.display = "none";
     // home2.style.display = "none";
@@ -105,7 +104,12 @@ $(document).bind('touchmove mousemove', e => {
             (doc && doc.clientTop || bodyDoc && bodyDoc.clientTop || 0);
     }
 
-    // console.log("x:", x, "y:", y);
+    console.log(
+        "x:", x,
+         "y:", y,
+         "viewport w", Math.max(document.documentElement.clientWidth, window.innerWidth || 0),
+         "vieport h",  Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+            );
     if ((360 >= x && x >= 280) && (740 >= y && y >= 660) && !overlayStatus && count >= 75 && articleStatus === false) {
         home3.style.display = "block";
         body.style.cursor = "pointer";
