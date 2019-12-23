@@ -41,11 +41,11 @@ mySVG.addEventListener("load", function () {
     ornament3R = or3.right;
     ornament3B = or3.bottom;
 
-    console.table({
-        "ornament 1": { "left": ornament1L, "top": ornament1T, "right": ornament1R, "bottom": ornament1B },
-        "ornament 2": { "left": ornament2L, "top": ornament2T, "right": ornament2R, "bottom": ornament2B },
-        "ornament 3": { "left": ornament3L, "top": ornament3T, "right": ornament3R, "bottom": ornament3B }
-    });
+    // console.table({
+    //     "ornament 1": { "left": ornament1L, "top": ornament1T, "right": ornament1R, "bottom": ornament1B },
+    //     "ornament 2": { "left": ornament2L, "top": ornament2T, "right": ornament2R, "bottom": ornament2B },
+    //     "ornament 3": { "left": ornament3L, "top": ornament3T, "right": ornament3R, "bottom": ornament3B }
+    // });
 }, false);
 
 const onScrollDown = () => {
@@ -152,7 +152,7 @@ $(document).bind('touchmove mousemove', e => {
     }
 
 
-    if (!articleStatus && !overlayStatus) {
+    if (!articleStatus && !overlayStatus && home0.style.display === "none" && home1.style.display === "none") {
         // using dynamic coordinates
         if ((ornament1B >= x && x >= ornament1T) && (ornament1R >= y && y >= ornament1L)) {
             home3.style.display = "block";
@@ -213,13 +213,14 @@ $(document).bind('touchend', function (e) {
         overlay.className = "animated fadeOut";
         overlayStatus = false;
 
-    } else if (ts < te - 5) {
-        if (count <= 0) {
-            count = 0;
-        } else {
-            count -= 1;
-        }
     }
+    // else if (ts < te - 5) {
+    //     if (count <= 0) {
+    //         count = 0;
+    //     } else {
+    //         count -= 1;
+    //     }
+    // }
 
 
     if (!articleStatus && !overlayStatus) {
