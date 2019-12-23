@@ -107,8 +107,6 @@ window.addEventListener('wheel', e => {
     //         count = 0;
     //     }
 
-    // } else 
-
     if (delta > 0) {
         // scroll down
         count += 1;
