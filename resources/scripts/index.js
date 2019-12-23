@@ -21,8 +21,7 @@ var or3;
 
 mySVG.addEventListener("load", function () {
     svgDoc = mySVG.contentDocument;
-    console.log("SVG contentDocument Loaded!", svgDoc);
-
+  
     var or1 = svgDoc.getElementById('Ornament 1').getBoundingClientRect();
     var or2 = svgDoc.getElementById('Ornament 2').getBoundingClientRect();
     var or3 = svgDoc.getElementById('Ornament 3').getBoundingClientRect();
@@ -93,7 +92,6 @@ window.addEventListener('wheel', e => {
     // $(document).bind('mousewheel touchmove', e => {
     let delta = e.deltaY; // just to know if it is scroll wheel up or down
 
-    console.log('scrolling web', count);
     if (delta < 0) {
         count -= 1;
         console.log('scroll up')
@@ -134,7 +132,6 @@ window.addEventListener('wheel', e => {
 });
 
 $(document).bind('touchmove mousemove', e => {
-    console.log('touchmove mousemove on');
     var eventDoc, doc, bodyDoc;
     e = e || window.e;
     var x = e.originalEvent.touches ? e.originalEvent.touches[0].pageY : e.pageY;
@@ -162,11 +159,8 @@ $(document).bind('touchmove mousemove', e => {
             home4.style.display = "none";
             home5.style.display = "none";
             overlay.style.display = "none";
-            console.log(overlayStatus, articleStatus, 'ORNAMENT 1 DETECTED');
 
             $(home3).bind('click touchstart', e => {
-                console.log('Ornament 1 clicked');
-                // enter code here
                 showArticle(1);
 
             });
@@ -176,12 +170,8 @@ $(document).bind('touchmove mousemove', e => {
             home3.style.display = "none";
             home5.style.display = "none";
             overlay.style.display = "none";
-            console.log(overlayStatus, articleStatus, 'ORNAMENT 2 DETECTED');
-
-
+          
             $(home4).bind('click touchstart', e => {
-                console.log('Ornament 2 clicked');
-                // enter code here
                 showArticle(2);
             });
         } else if ((ornament3B >= x && x >= ornament3T) && (ornament3R >= y && y >= ornament3L)) {
@@ -190,12 +180,8 @@ $(document).bind('touchmove mousemove', e => {
             home4.style.display = "none";
             home3.style.display = "none";
             overlay.style.display = "none";
-            console.log(overlayStatus, articleStatus, 'ORNAMENT 3 DETECTED');
-
-
+          
             $(home5).bind('click touchstart', e => {
-                console.log('Ornament 3 clicked');
-                // enter code here
                 showArticle(3);
             });
         } else {
