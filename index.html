@@ -24,9 +24,15 @@
 </head>
 
 <body id="body">
-
+<div class="instructions-container d-flex align-items-center flex-column justify-content-center" style="display: none" id="ornament-instructions">
+  <div class="instructions text-center">
+    <h6>
+      Click the ornaments to see their stories
+    </h6>
+  </div>
+</div>
   <div id="home0">
-    <div class="home-container d-flex align-items-end justify-content-center">
+    <div class="instructions-container d-flex align-items-center flex-column justify-content-center">
       <div class="instructions text-center">
         <h6>
           Scroll Down
@@ -40,7 +46,7 @@
     </div>
   </div>
   <div id="home1">
-    <div class="home-container d-flex align-items-end justify-content-center">
+    <div class="instructions-container d-flex align-items-center flex-column justify-content-center">
       <div class="instructions text-center">
         <h6>
           Scroll Down
@@ -375,7 +381,7 @@
     </div>
     <div class="extra"></div>
   </div>
-  <iframe src="./resources/sounds/Christmas.mp3" style="display:none" id="iframeAudio">
+  <iframe src="./resources/sounds/Christmas.mp3" allow="autoplay" style="display:none" id="iframeAudio">
   </iframe>
 
   <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>

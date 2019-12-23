@@ -7,6 +7,7 @@ const home3 = document.getElementById('home3');
 const home4 = document.getElementById('home4');
 const home5 = document.getElementById('home5');
 const article = document.getElementById("article");
+const instructions = document.getElementById("ornament-instructions");
 
 let count = 0;
 let overlayStatus = true;
@@ -69,6 +70,7 @@ const showArticle = articleNum => {
     body.style.height = "100%";
     body.style.overflowY = "auto";
     home0.style.display = "none";
+    body.style.display = "block";
     body.style.cursor = "auto";
     home1.style.display = "none";
     // home2.style.display = "none";
@@ -85,6 +87,7 @@ const closeArticle = articleNum => {
     article.style.display = "none";
     body.style.height = "100vh";
     body.style.overflowY = "hidden";
+    body.style.display = "flex";
     // mySVG.style.display = "";
     home0.style.display = "none";
     body.style.cursor = "pointer";
@@ -124,13 +127,15 @@ window.addEventListener('wheel', e => {
             mySVG.style.display = "none";
             home0.style.display = "none";
             home1.style.display = "none";
+            instructions.style.display = "flex";
+            body.style.display = "flex";
             count = 75;
         } else if (count <= 30) {
-            home0.style.display = "block";
+            home0.style.display = "flex";
             overlay.style.display = "none";
         } else if (count >= 30) {
             home0.style.display = "none";
-            home1.style.display = "block";
+            home1.style.display = "flex";
             // mySVG.style.opacity = "0";
         }
     }
@@ -166,8 +171,11 @@ $(document).bind('touchmove mousemove', e => {
             home4.style.display = "none";
             home5.style.display = "none";
             overlay.style.display = "none";
+            instructions.style.display = "none";
+            body.style.display = "block";
 
-            $(home3).bind('click touchstart', e => {
+
+            $(home3).bind('click touchstart', () => {
                 showArticle(1);
 
             });
@@ -177,8 +185,10 @@ $(document).bind('touchmove mousemove', e => {
             home3.style.display = "none";
             home5.style.display = "none";
             overlay.style.display = "none";
+            instructions.style.display = "none";
+            body.style.display = "block";
 
-            $(home4).bind('click touchstart', e => {
+            $(home4).bind('click touchstart', () => {
                 showArticle(2);
             });
         } else if ((ornament3B >= x && x >= ornament3T) && (ornament3R >= y && y >= ornament3L)) {
@@ -187,8 +197,10 @@ $(document).bind('touchmove mousemove', e => {
             home4.style.display = "none";
             home3.style.display = "none";
             overlay.style.display = "none";
+            instructions.style.display = "none";
+            body.style.display = "block";
 
-            $(home5).bind('click touchstart', e => {
+            $(home5).bind('click touchstart', () => {
                 showArticle(3);
             });
         } else {
@@ -196,6 +208,8 @@ $(document).bind('touchmove mousemove', e => {
             home4.style.display = "none";
             home5.style.display = "none";
             body.style.cursor = 'auto';
+            instructions.style.display = "flex";
+            body.style.display = "flex";
         }
     }
 
@@ -236,32 +250,37 @@ $(document).bind('touchend', function (e) {
             overlayStatus = true;
         } else if (count === 1) {
             overlay.style.display = "none";
-            home0.style.display = "block";
+            home0.style.display = "flex";
             home1.style.display = "none";
             // home2.style.display = "none";
         } else if (count === 2) {
             overlay.style.display = "none";
             home0.style.display = "none";
-            home1.style.display = "block";
+            home1.style.display = "flex";
             // home2.style.display = "none";
         } else if (count === 3) {
             mySVG.style.display = "none";
             overlay.style.display = "none";
             home0.style.display = "none";
             home1.style.display = "none";
+            instructions.style.display = "flex";
+            body.style.display = "flex";
             // home2.style.display = "block";
         }
     }
 
 });
 
-$(document).ready(function () {
-    //Do something
-    let sound = document.getElementById("iframeAudio");
-    sound.currentTime = 0;
-    sound.loop = true; //if you want it to restart playing automatically when it ends
-    sound.play();
-});
 
 const observer = lozad();
 observer.observe();
+
+$(function () {
+    $(window).on('load', function () {
+        $('[data-src]').each(function () {
+            var $this = $(this),
+                src = $(this).data('src');
+            $this.attr('src', src);
+        });
+    });
+});
