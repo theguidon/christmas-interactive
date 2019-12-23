@@ -21,7 +21,7 @@ var or3;
 
 mySVG.addEventListener("load", function () {
     svgDoc = mySVG.contentDocument;
-  
+
     var or1 = svgDoc.getElementById('Ornament 1').getBoundingClientRect();
     var or2 = svgDoc.getElementById('Ornament 2').getBoundingClientRect();
     var or3 = svgDoc.getElementById('Ornament 3').getBoundingClientRect();
@@ -41,11 +41,11 @@ mySVG.addEventListener("load", function () {
     ornament3R = or3.right;
     ornament3B = or3.bottom;
 
-    console.table({
-        "ornament 1": { "left": ornament1L, "top": ornament1T, "right": ornament1R, "bottom": ornament1B },
-        "ornament 2": { "left": ornament2L, "top": ornament2T, "right": ornament2R, "bottom": ornament2B },
-        "ornament 3": { "left": ornament3L, "top": ornament3T, "right": ornament3R, "bottom": ornament3B }
-    });
+    // console.table({
+    //     "ornament 1": { "left": ornament1L, "top": ornament1T, "right": ornament1R, "bottom": ornament1B },
+    //     "ornament 2": { "left": ornament2L, "top": ornament2T, "right": ornament2R, "bottom": ornament2B },
+    //     "ornament 3": { "left": ornament3L, "top": ornament3T, "right": ornament3R, "bottom": ornament3B }
+    // });
 }, false);
 
 const onScrollDown = () => {
@@ -92,16 +92,17 @@ window.addEventListener('wheel', e => {
     // $(document).bind('mousewheel touchmove', e => {
     let delta = e.deltaY; // just to know if it is scroll wheel up or down
 
-    if (delta < 0) {
-        count -= 1;
-        console.log('scroll up')
-        if (count <= 0) {
-            count = 0;
-        }
+    // if (delta < 0) {
+    //     count -= 1;
+    //     console.log('scroll up')
+    //     if (count <= 0) {
+    //         count = 0;
+    //     }
 
-    } else if (delta > 0) {
+    // } else 
+
+    if (delta > 0) {
         // scroll down
-        console.log('scroll down')
         count += 1;
         overlay.className = "animated fadeOut";
         overlayStatus = false;
@@ -151,7 +152,7 @@ $(document).bind('touchmove mousemove', e => {
     }
 
 
-    if (!articleStatus && !overlayStatus) {
+    if (!articleStatus && !overlayStatus && home0.style.display === "none" && home1.style.display === "none") {
         // using dynamic coordinates
         if ((ornament1B >= x && x >= ornament1T) && (ornament1R >= y && y >= ornament1L)) {
             home3.style.display = "block";
@@ -170,7 +171,7 @@ $(document).bind('touchmove mousemove', e => {
             home3.style.display = "none";
             home5.style.display = "none";
             overlay.style.display = "none";
-          
+
             $(home4).bind('click touchstart', e => {
                 showArticle(2);
             });
@@ -180,7 +181,7 @@ $(document).bind('touchmove mousemove', e => {
             home4.style.display = "none";
             home3.style.display = "none";
             overlay.style.display = "none";
-          
+
             $(home5).bind('click touchstart', e => {
                 showArticle(3);
             });
@@ -212,13 +213,14 @@ $(document).bind('touchend', function (e) {
         overlay.className = "animated fadeOut";
         overlayStatus = false;
 
-    } else if (ts < te - 5) {
-        if (count <= 0) {
-            count = 0;
-        } else {
-            count -= 1;
-        }
     }
+    // else if (ts < te - 5) {
+    //     if (count <= 0) {
+    //         count = 0;
+    //     } else {
+    //         count -= 1;
+    //     }
+    // }
 
 
     if (!articleStatus && !overlayStatus) {
