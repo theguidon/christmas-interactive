@@ -6,7 +6,6 @@ const home1 = document.getElementById("home1");
 const home3 = document.getElementById('home3');
 const home4 = document.getElementById('home4');
 const home5 = document.getElementById('home5');
-
 const article = document.getElementById("article");
 
 let count = 0;
@@ -48,11 +47,20 @@ mySVG.addEventListener("load", function () {
     // });
 }, false);
 
-const onScrollDown = () => {
-    overlay.className = "animated fadeOut";
-    count = 5;
-    overlayStatus = false;
-};
+// const onScrollDown0 = () => {
+//     overlay.className = "animated fadeOut";
+//     count = 5;
+//     overlayStatus = false;
+//     overlay.style.display = "none";
+// };
+
+// const onScrollDown1 = () => {
+//     count = 25;
+// };
+
+// const onScrollDown2 = () => {
+//     count = 75;
+// };
 
 // function for showing article
 const showArticle = articleNum => {
@@ -61,13 +69,13 @@ const showArticle = articleNum => {
     body.style.height = "100%";
     body.style.overflowY = "auto";
     home0.style.display = "none";
+    body.style.cursor = "auto";
     home1.style.display = "none";
     // home2.style.display = "none";
     mySVG.style.display = "none";
     home3.style.display = "none";
     home4.style.display = "none";
     home5.style.display = "none";
-
     articleStatus = true;
 };
 
@@ -79,12 +87,12 @@ const closeArticle = articleNum => {
     body.style.overflowY = "hidden";
     // mySVG.style.display = "";
     home0.style.display = "none";
+    body.style.cursor = "pointer";
     home1.style.display = "none";
     // home2.style.display = "none";
     home3.style.display = "none";
     home4.style.display = "none";
     home5.style.display = "none";
-
     articleStatus = false;
 };
 // Web Javascript
@@ -114,15 +122,15 @@ window.addEventListener('wheel', e => {
             overlay.style.display = "block";
             overlay.className = "animated fadeInDown";
             overlayStatus = true;
-        } else if (count >= 75) {
+        } else if (count >= 60) {
             mySVG.style.display = "none";
             home0.style.display = "none";
             home1.style.display = "none";
             count = 75;
-        } else if (count <= 25) {
+        } else if (count <= 30) {
             home0.style.display = "block";
             overlay.style.display = "none";
-        } else if (count >= 25) {
+        } else if (count >= 30) {
             home0.style.display = "none";
             home1.style.display = "block";
             // mySVG.style.opacity = "0";
@@ -256,3 +264,6 @@ $(document).ready(function () {
     sound.loop = true; //if you want it to restart playing automatically when it ends
     sound.play();
 });
+
+const observer = lozad();
+observer.observe();
