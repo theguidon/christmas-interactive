@@ -102,12 +102,12 @@ body,
   display: none;
 }
 
-#scroll {
+/* .instructions {
   cursor: pointer;
-}
+} */
 
 
-#scroll>h6 {
+.instructions>h6 {
   color: white;
   margin-bottom: 8px;
   font-size: 16px;
@@ -160,7 +160,7 @@ body,
     line-height: 22px;
   }
 
-  #scroll>h6 {
+  .instructions>h6 {
     font-size: 12px;
   }
 }
@@ -270,4 +270,8 @@ body,
     font-size: 18px;
     padding-top: 12px;
   }
+}
+
+.align-items-end {
+  align-items: flex-end;
 }

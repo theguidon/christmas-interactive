@@ -25,8 +25,34 @@
 
 <body id="body">
 
-  <div id="home0"></div>
-  <div id="home1"></div>
+  <div id="home0">
+    <div class="home-container d-flex align-items-end justify-content-center">
+      <div class="instructions text-center">
+        <h6>
+          Scroll Down
+        </h6>
+        <div class="d-flex justify-content-center">
+          <svg width="33" height="17" viewBox="0 0 33 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M33 2.88851L29.6254 0L16.5 11.2254L3.37458 0L0 2.88608L16.5 17L33 2.88851Z" fill="white" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="home1">
+    <div class="home-container d-flex align-items-end justify-content-center">
+      <div class="instructions text-center">
+        <h6>
+          Scroll Down
+        </h6>
+        <div class="d-flex justify-content-center">
+          <svg width="33" height="17" viewBox="0 0 33 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M33 2.88851L29.6254 0L16.5 11.2254L3.37458 0L0 2.88608L16.5 17L33 2.88851Z" fill="white" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
   <object id="svgw" type="image/svg+xml" data="./resources/images/wallpaper2TEST.svg"
     style="width: 100%; height: 100%; object-position: center; background-size: cover; opacity: 0; display: block;"></object>
 
@@ -36,13 +62,13 @@
   <div id="home3"></div>
   <div id="overlay">
     <div class="home-container d-flex align-items-center flex-column justify-content-between">
-      <img src="./resources/images/logo.png" alt="logo">
+      <img data-src="./resources/images/logo.png" class="lozad" alt="logo" width="423px" height="66px"/>
       <div class="text-center">
         <h1>Santa’s Real Elves</h1>
         <h2>Interactive by Tria Gonzales, Harvey Sison, & Cobbie Quintos</h2>
         <h2>Illustrations by Mika Medina</h2>
       </div>
-      <div onclick="onScrollDown()" id="scroll">
+      <div class="instructions">
         <h6>
           Scroll Down
         </h6>
@@ -56,14 +82,14 @@
   </div>
   </div>
   <div class="article" id="article-1">
-    <img src="./resources/images/x-button.svg" class="x-button" alt="close" onclick="closeArticle(1)">
+    <img data-src="./resources/images/x-button.svg" class="x-button lozad" alt="close" onclick="closeArticle(1)">
     <div class="article-header">
       <h1>In the name of art and mall hours</h1>
       <p class="author">by Keziah Maru Z. Pasion</p>
-      <!-- <div class="image-container">
-                <img src="./resources/images/" alt="" class="s">
-                <div class="image-text-overlay">Photos by </div>
-        </div>       -->
+      <div class="image-container">
+        <img data-src="./resources/images/name.jpg" alt="" class="s lozad">
+        <div class="image-text-overlay">Photos by Jamie Go</div>
+      </div>
     </div>
     <div class="content-container">
       <p class="content">
@@ -130,12 +156,12 @@
     <div class="extra"></div>
   </div>
   <div class="article" id="article-2">
-    <img src="./resources/images/x-button.svg" class="x-button" alt="close" onclick="closeArticle(2)">
+    <img data-src="./resources/images/x-button.svg" class="x-button lozad" alt="close" onclick="closeArticle(2)">
     <div class="article-header">
       <h1>Dancing to the rhythm of life</h1>
       <p class="author">By Andrea Tibayan</p>
       <div class="image-container">
-        <img src="./resources/images/dancing.png" alt="" class="s">
+        <img data-src="./resources/images/dancing.png" alt="" class="s lozad">
         <div class="image-text-overlay">Photos by Jamie Go</div>
       </div>
     </div>
@@ -254,13 +280,13 @@
     <div class="extra"></div>
   </div>
   <div class="article" id="article-3">
-    <img src="./resources/images/x-button.svg" class="x-button" alt="close" onclick="closeArticle(3)">
+    <img data-src="./resources/images/x-button.svg" class="x-button lozad" alt="close" onclick="closeArticle(3)">
 
     <div class="article-header">
       <h1>Of holidays and homesickness</h1>
       <p class="author">By Andrea Mikaela Llanes</p>
       <div class="image-container">
-        <img src="./resources/images/of-holidays.png" alt="" class="s">
+        <img data-src="./resources/images/holidays.jpg" alt="holiday" class="s lozad">
 
         <div class="image-text-overlay text-overlay-color2">Photos by Ralph Lim</div>
       </div>
@@ -349,10 +375,10 @@
     </div>
     <div class="extra"></div>
   </div>
-  <iframe src="./resources/sounds/Christmas.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+  <iframe src="./resources/sounds/Christmas.mp3" style="display:none" id="iframeAudio">
   </iframe>
-  <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-              integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
+
+  <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
   <script src="./resources/scripts/jquery.min.js"></script>
   <script src="./resources/scripts/index.js"></script>
 </body>
