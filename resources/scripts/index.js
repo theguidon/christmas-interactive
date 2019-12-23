@@ -21,7 +21,7 @@ var or3;
 
 mySVG.addEventListener("load", function () {
     svgDoc = mySVG.contentDocument;
-  
+
     var or1 = svgDoc.getElementById('Ornament 1').getBoundingClientRect();
     var or2 = svgDoc.getElementById('Ornament 2').getBoundingClientRect();
     var or3 = svgDoc.getElementById('Ornament 3').getBoundingClientRect();
@@ -92,16 +92,17 @@ window.addEventListener('wheel', e => {
     // $(document).bind('mousewheel touchmove', e => {
     let delta = e.deltaY; // just to know if it is scroll wheel up or down
 
-    if (delta < 0) {
-        count -= 1;
-        console.log('scroll up')
-        if (count <= 0) {
-            count = 0;
-        }
+    // if (delta < 0) {
+    //     count -= 1;
+    //     console.log('scroll up')
+    //     if (count <= 0) {
+    //         count = 0;
+    //     }
 
-    } else if (delta > 0) {
+    // } else 
+
+    if (delta > 0) {
         // scroll down
-        console.log('scroll down')
         count += 1;
         overlay.className = "animated fadeOut";
         overlayStatus = false;
@@ -170,7 +171,7 @@ $(document).bind('touchmove mousemove', e => {
             home3.style.display = "none";
             home5.style.display = "none";
             overlay.style.display = "none";
-          
+
             $(home4).bind('click touchstart', e => {
                 showArticle(2);
             });
@@ -180,7 +181,7 @@ $(document).bind('touchmove mousemove', e => {
             home4.style.display = "none";
             home3.style.display = "none";
             overlay.style.display = "none";
-          
+
             $(home5).bind('click touchstart', e => {
                 showArticle(3);
             });
