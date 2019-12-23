@@ -248,3 +248,11 @@ $(document).bind('touchend', function (e) {
     }
 
 });
+
+$(document).ready(function () {
+    //Do something
+    let sound = document.getElementById("iframeAudio");
+    sound.currentTime = 0;
+    sound.loop = true; //if you want it to restart playing automatically when it ends
+    sound.play();
+});
