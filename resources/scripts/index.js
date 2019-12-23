@@ -174,11 +174,9 @@ $(document).bind('touchmove mousemove', e => {
             instructions.style.display = "none";
             body.style.display = "block";
 
-            console.log('hover article 1')
 
             $(home3).bind('click touchstart', () => {
                 showArticle(1);
-                console.log('show article 1')
 
             });
         } else if ((ornament2B >= x && x >= ornament2T) && (ornament2R >= y && y >= ornament2L)) {
@@ -189,11 +187,9 @@ $(document).bind('touchmove mousemove', e => {
             overlay.style.display = "none";
             instructions.style.display = "none";
             body.style.display = "block";
-            console.log('hover article 2')
 
             $(home4).bind('click touchstart', () => {
                 showArticle(2);
-                console.log('show article 2')
             });
         } else if ((ornament3B >= x && x >= ornament3T) && (ornament3R >= y && y >= ornament3L)) {
             home5.style.display = "block";
@@ -204,11 +200,8 @@ $(document).bind('touchmove mousemove', e => {
             instructions.style.display = "none";
             body.style.display = "block";
 
-            console.log('hover article 3')
-
             $(home5).bind('click touchstart', () => {
                 showArticle(3);
-                console.log('show article 3')
             });
         } else {
             home3.style.display = "none";
@@ -288,7 +281,6 @@ $(function () {
             var $this = $(this),
                 src = $(this).data('src');
             $this.attr('src', src);
-            console.log(src);
         });
     });
 });
