@@ -15,7 +15,7 @@ h1 {
     cursive;
   font-style: normal;
   font-weight: 900;
-  font-size: 120px;
+  font-size: 8rem;
   color: #ffffff;
 }
 
@@ -24,6 +24,7 @@ h2 {
   font-weight: 300;
   font-size: 24px;
   line-height: 37px;
+  margin: 8px;
   color: #ffffff;
 }
 
@@ -161,7 +162,22 @@ body {
   justify-content: space-between;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 5rem;
+  }
+
+  h2 {
+    font-size: 24px;
+    line-height: 22px;
+  }
+
+  .instructions>h6 {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
   h1 {
     font-size: 36px;
   }
@@ -195,13 +211,10 @@ body {
 
 .image-text-overlay {
   position: absolute;
-  bottom: 8px;
+  bottom: 16px;
   right: 16px;
   font-size: 12px;
-}
-
-.text-overlay-color2 {
-  color: rgb(236, 234, 234)
+  color: black;
 }
 
 .article {
@@ -251,6 +264,7 @@ body {
 
 .s {
   width: 100%;
+  margin-top: 30px;
 }
 
 .content-container {
