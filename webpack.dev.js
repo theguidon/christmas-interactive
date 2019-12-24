@@ -46,7 +46,7 @@ module.exports = {
             },
             {
                 // Now we apply rule for images
-                test: /\.(png|jpe?g|gif|svg)$/,
+                test: /\.(png|jpe?g|gif|svg|webp)$/,
                 use: [
                     {
                         // Using file-loader for these files
@@ -58,16 +58,16 @@ module.exports = {
                     }
                 ]
             },
-            {
-                // Now we apply rule for images
-                test: /\.webp$/,
-                use: [
-                    {
-                        // Using file-loader for these files
-                        loader: "webp-loader",
-                    }
-                ]
-            },
+            // {
+            //     // Now we apply rule for images
+            //     test: /\.webp$/,
+            //     use: [
+            //         {
+            //             // Using file-loader for these files
+            //             loader: "webp-loader",
+            //         }
+            //     ]
+            // },
             {
                 // Apply rule for fonts files
                 test: /\.(woff|woff2|ttf|otf|eot)$/,
@@ -116,7 +116,8 @@ module.exports = {
                             // THIS will resolve relative URLs to reference from the src/ directory
                             root: path.resolve(__dirname, 'src'),
                             attrs: [':data-src'],
-                            minimize: true
+                            minimize: true,
+                            esModule: false
                         }
                     }
                 ]

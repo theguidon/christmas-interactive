@@ -48,7 +48,7 @@ module.exports = {
             },
             {
                 // Now we apply rule for images
-                test: /\.(png|jpe?g|gif|svg)$/,
+                test: /\.(png|jpe?g|gif|svg|webp)$/,
                 use: [
                     {
                         // Using file-loader for these files
@@ -59,23 +59,23 @@ module.exports = {
                         options: {
                             outputPath: 'resources/images',
                             publicPath: 'resources/images',
-                            regExp: /\/([a-z0-9]+)\/[a-z0-9]+\.png$/i,
+                            regExp: /\/([a-z0-9]+)\/[a-z0-9]+\.(png|jpe?g|gif|svg|webp)$/i,
                             name: '[name].[ext]',
                             esModule: false
                         }
                     }
                 ]
             },
-            {
-                // Now we apply rule for images
-                test: /\.webp$/,
-                use: [
-                    {
-                        // Using file-loader for these files
-                        loader: "webp-loader",
-                    }
-                ]
-            },
+            // {
+            //     // Now we apply rule for images
+            //     test: /\.webp$/,
+            //     use: [
+            //         {
+            //             // Using file-loader for these files
+            //             loader: "webp-loader",
+            //         }
+            //     ]
+            // },
             {
                 // Apply rule for fonts files
                 test: /\.(woff|woff2|ttf|otf|eot)$/,
@@ -126,7 +126,10 @@ module.exports = {
                         loader: 'html-loader',
                         options: {
                             // THIS will resolve relative URLs to reference from the src/ directory
-                            root: path.resolve(__dirname, 'src')
+                            root: path.resolve(__dirname, 'src'),
+                            esModule: false,
+                            attrs: [':data-src'],
+                            minimize: true,
                         }
                     }
                 ]
