@@ -11,3 +11,5 @@ https://vecta.io/blog/best-way-to-embed-svg
 https://stackoverflow.com/questions/11434916/javascript-accessing-inner-dom-of-svg
 
 https://stackoverflow.com/questions/23227195/how-to-make-svg-fill-act-in-a-similar-way-to-css-background-size-cover
+
+https://stackoverflow.com/questions/11434916/javascript-accessing-inner-dom-of-svg
