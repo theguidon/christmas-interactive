@@ -2,7 +2,6 @@ const body = document.getElementById("body");
 const overlay = document.getElementById("overlay");
 const home0 = document.getElementById("home0");
 const home1 = document.getElementById("home1");
-// const home2 = document.getElementById("home2");
 const home3 = document.getElementById('home3');
 const home4 = document.getElementById('home4');
 const home5 = document.getElementById('home5');
@@ -41,27 +40,7 @@ mySVG.addEventListener("load", function () {
     ornament3R = or3.right;
     ornament3B = or3.bottom;
 
-    // console.table({
-    //     "ornament 1": { "left": ornament1L, "top": ornament1T, "right": ornament1R, "bottom": ornament1B },
-    //     "ornament 2": { "left": ornament2L, "top": ornament2T, "right": ornament2R, "bottom": ornament2B },
-    //     "ornament 3": { "left": ornament3L, "top": ornament3T, "right": ornament3R, "bottom": ornament3B }
-    // });
 }, false);
-
-// const onScrollDown0 = () => {
-//     overlay.className = "animated fadeOut";
-//     count = 5;
-//     overlayStatus = false;
-//     overlay.style.display = "none";
-// };
-
-// const onScrollDown1 = () => {
-//     count = 25;
-// };
-
-// const onScrollDown2 = () => {
-//     count = 75;
-// };
 
 // function for showing article
 const showArticle = articleNum => {
@@ -88,42 +67,30 @@ const closeArticle = articleNum => {
     body.style.height = "100vh";
     body.style.overflowY = "hidden";
     body.style.display = "flex";
-    // mySVG.style.display = "";
     home0.style.display = "none";
     body.style.cursor = "pointer";
     home1.style.display = "none";
-    // home2.style.display = "none";
     home3.style.display = "none";
     home4.style.display = "none";
     home5.style.display = "none";
     articleStatus = false;
 };
+
 // Web Javascript
 window.addEventListener('wheel', e => {
-    // $(document).bind('mousewheel touchmove', e => {
     let delta = e.deltaY; // just to know if it is scroll wheel up or down
 
-    // if (delta < 0) {
-    //     count -= 1;
-    //     console.log('scroll up')
-    //     if (count <= 0) {
-    //         count = 0;
-    //     }
 
     if (delta > 0) {
         // scroll down
         count += 1;
-        overlay.className = "animated fadeOut";
+        overlay.className = "animated slow fadeOut";
         overlayStatus = false;
     }
 
 
     if (!articleStatus && !overlayStatus) {
-        if (count <= 0) {
-            overlay.style.display = "block";
-            overlay.className = "animated fadeInDown";
-            overlayStatus = true;
-        } else if (count >= 60) {
+        if (count >= 60) {
             mySVG.style.display = "none";
             home0.style.display = "none";
             home1.style.display = "none";
@@ -136,7 +103,6 @@ window.addEventListener('wheel', e => {
         } else if (count >= 30) {
             home0.style.display = "none";
             home1.style.display = "flex";
-            // mySVG.style.opacity = "0";
         }
     }
 
@@ -230,25 +196,15 @@ $(document).bind('touchend', function (e) {
         } else {
             count += 1;
         }
-        overlay.className = "animated fadeOut";
+        overlay.className = "animated slow fadeOut";
         overlayStatus = false;
 
     }
-    // else if (ts < te - 5) {
-    //     if (count <= 0) {
-    //         count = 0;
-    //     } else {
-    //         count -= 1;
-    //     }
-    // }
+
 
 
     if (!articleStatus && !overlayStatus) {
-        if (count === 0) {
-            overlay.style.display = "block";
-            overlay.className = "animated fadeInDown";
-            overlayStatus = true;
-        } else if (count === 1) {
+        if (count === 1) {
             overlay.style.display = "none";
             home0.style.display = "flex";
             home1.style.display = "none";
@@ -265,12 +221,24 @@ $(document).bind('touchend', function (e) {
             home1.style.display = "none";
             instructions.style.display = "flex";
             body.style.display = "flex";
-            // home2.style.display = "block";
         }
     }
 
 });
 
+var x = window.matchMedia("(max-width: 768px)");
+
+
+function myFunction(x) {
+    if (x.matches) { // If media query matches
+        $("iframe").remove("#iframeAudio");
+    }
+}
+
+
+$(document).ready(function () {
+    myFunction(x); // Call listener function at run time
+});
 
 const observer = lozad();
 observer.observe();
