@@ -87,11 +87,6 @@ body {
   z-index: 9999;
 }
 
-/* #home2 {
-  background-image: url('/resources/images/wallpaper2.svg');
-  z-index: 9999
-} */
-
 #home3 {
   background-image: url("../images/wallpaper3.svg");
   z-index: 9999;
@@ -112,10 +107,6 @@ body {
   cursor: pointer;
   display: none;
 }
-
-/* .instructions {
-  cursor: pointer;
-} */
 
 .instructions > h6 {
   color: white;
